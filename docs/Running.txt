@@ -1,0 +1,16 @@
+Cleanup Cache
+==================
+php artisan cache:clear
+php artisan view:clear
+
+
+Running Webserver
+==================
+php -S localhost:8000 -t public
+php artisan serve
+
+
+Cleanup Composer
+==================
+composer clearcache
+composer dumpautoload -o
