@@ -10,7 +10,7 @@ server {
     index index.php index.html index.htm;
 
     # Your Domain Name
-    server_name 157.230.35.171 demo-auth.zeroc0d3lab.com;
+    server_name demo-auth.zeroc0d3lab.com;
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;
