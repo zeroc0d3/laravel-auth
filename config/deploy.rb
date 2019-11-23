@@ -22,17 +22,10 @@ set :release_storage, "#{fetch(:src_release)}/storage"
 set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, [
-    "#{fetch(:source)}/.env",
-    "#{fetch(:source)}/composer.json",
-    "#{fetch(:source)}/package.json"
-]
+append :linked_files, "#{fetch(:source)}/.env", "#{fetch(:source)}/composer.json", "#{fetch(:source)}/package.json"
 
 # Default value for :linked_dirs []
-append :linked_dirs, [
-    "#{fetch(:source)}/vendor",
-    "#{fetch(:source)}/node_modules"
-]
+append :linked_dirs, "#{fetch(:source)}/vendor", "#{fetch(:source)}/node_modules", "#{fetch(:source)}/storage"
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
