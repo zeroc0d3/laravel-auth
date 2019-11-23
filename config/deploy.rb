@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.1"
 
-set :application, "lims-auth"
+set :application, "laravel-auth"
 set :repo_url, "git@gitlab.com:zeroc0d3lab-laravel/laravel-auth.git"
 
 # Default branch is :master
@@ -22,15 +22,17 @@ set :release_storage, "#{fetch(:src_release)}/storage"
 set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files,
+append :linked_files, [
     "#{fetch(:source)}/.env",
     "#{fetch(:source)}/composer.json",
-    "#{fetch(:source)}/package.json",
+    "#{fetch(:source)}/package.json"
+]
 
 # Default value for :linked_dirs []
-append :linked_dirs,
+append :linked_dirs, [
     "#{fetch(:source)}/vendor",
     "#{fetch(:source)}/node_modules"
+]
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
