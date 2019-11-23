@@ -1,13 +1,12 @@
 server {
     listen 80;
-    listen [::]:80 ipv6only=on;
 
     # Log files for Debugging
-    access_log /var/www/laravel-auth/staging/shared/log/access.log;
-    error_log /var/www/laravel-auth/staging/shared/log/error.log;
+    access_log /data/www/laravel-auth/staging/shared/log/access.log;
+    error_log /data/www/laravel-auth/staging/shared/log/error.log;
 
     # Webroot Directory for Laravel project
-    root /var/www/laravel-auth/staging/current/src/public;
+    root /data/www/laravel-auth/staging/current/src/public;
     index index.php index.html index.htm;
 
     # Your Domain Name

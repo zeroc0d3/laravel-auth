@@ -1,17 +1,16 @@
 server {
     listen 80;
-    listen [::]:80 ipv6only=on;
 
     # Log files for Debugging
-    access_log /var/www/laravel-auth/preprod/shared/log/access.log;
-    error_log /var/www/laravel-auth/preprod/shared/log/error.log;
+    access_log /data/www/laravel-auth/preprod/shared/log/access.log;
+    error_log /data/www/laravel-auth/preprod/shared/log/error.log;
 
     # Webroot Directory for Laravel project
-    root /var/www/laravel-auth/preprod/current/src/public;
+    root /data/www/laravel-auth/preprod/current/src/public;
     index index.php index.html index.htm;
 
     # Your Domain Name
-    server_name 157.230.35.171 preprod.zeroc0d3lab.com;
+    server_name 157.230.35.171 preprod-auth.zeroc0d3lab.com;
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;

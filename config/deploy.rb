@@ -171,7 +171,7 @@ end
 
 after 'deploy:publishing', 'deploy:restart'
 after 'deploy:restart', 'composer:initialize'
-#after 'deploy:restart', 'artisan:clear_all'
+after 'deploy:restart', 'artisan:clear_all'
 after 'deploy:restart', 'nginx:manual_reload'
 
 after 'chown:restore', 'nginx:manual_reload'
