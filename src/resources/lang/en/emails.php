@@ -22,7 +22,7 @@ return [
     'activationGreeting' => 'Welcome!',
     'activationMessage'  => 'You need to activate your email before you can start using all of our services.',
     'activationButton'   => 'Activate',
-    'activationThanks'   => 'Thank you for using our application!',
+    'activationThanks'   => 'Thank you for visiting us!',
 
     /*
      * Goobye email.
