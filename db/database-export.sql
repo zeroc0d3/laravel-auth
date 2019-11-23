@@ -1,4 +1,4 @@
--- Adminer 4.6.3 MySQL dump
+-- Adminer 4.7.5 MySQL dump
 
 SET NAMES utf8;
 SET time_zone = '+00:00';
@@ -28,7 +28,7 @@ CREATE TABLE `failed_jobs` (
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -39,7 +39,7 @@ CREATE TABLE `laravel2step` (
   `userId` bigint(20) unsigned NOT NULL,
   `authCode` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `authCount` int(11) NOT NULL,
-  `authStatus` tinyint(1) NOT NULL DEFAULT 0,
+  `authStatus` tinyint(1) NOT NULL DEFAULT '0',
   `authDate` datetime DEFAULT NULL,
   `requestDate` datetime DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE `laravel_blocker` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `typeId` int(10) unsigned NOT NULL,
   `value` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `note` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `note` longtext COLLATE utf8mb4_unicode_ci,
   `userId` bigint(20) unsigned DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -104,11 +104,11 @@ CREATE TABLE `laravel_logger_activity` (
   `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `userType` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `userId` int(11) DEFAULT NULL,
-  `route` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `route` longtext COLLATE utf8mb4_unicode_ci,
   `ipAddress` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `userAgent` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `userAgent` text COLLATE utf8mb4_unicode_ci,
   `locale` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `referer` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `referer` longtext COLLATE utf8mb4_unicode_ci,
   `methodType` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -135,7 +135,50 @@ INSERT INTO `laravel_logger_activity` (`id`, `description`, `userType`, `userId`
 (16,	'Viewed blocker/1',	'Registered',	1,	'http://localhost:8000/blocker/1',	'127.0.0.1',	'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Mobile Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://localhost:8000/blocker',	'GET',	'2019-11-19 15:39:31',	'2019-11-19 15:39:31',	NULL),
 (17,	'Viewed profile/rogahn.lelia',	'Registered',	1,	'http://localhost:8000/profile/rogahn.lelia',	'127.0.0.1',	'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Mobile Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://localhost:8000/roles',	'GET',	'2019-11-19 15:39:42',	'2019-11-19 15:39:42',	NULL),
 (18,	'Viewed profile/rogahn.lelia/edit',	'Registered',	1,	'http://localhost:8000/profile/rogahn.lelia/edit',	'127.0.0.1',	'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Mobile Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://localhost:8000/profile/rogahn.lelia',	'GET',	'2019-11-19 15:39:46',	'2019-11-19 15:39:46',	NULL),
-(19,	'Logged Out',	'Registered',	1,	'http://localhost:8000/logout',	'127.0.0.1',	'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Mobile Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://localhost:8000/roles',	'POST',	'2019-11-19 15:40:11',	'2019-11-19 15:40:11',	NULL);
+(19,	'Logged Out',	'Registered',	1,	'http://localhost:8000/logout',	'127.0.0.1',	'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Mobile Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://localhost:8000/roles',	'POST',	'2019-11-19 15:40:11',	'2019-11-19 15:40:11',	NULL),
+(20,	'Logged In',	'Registered',	1,	'http://auth.zeroc0d3lab.com/login',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/login',	'POST',	'2019-11-23 08:58:04',	'2019-11-23 08:58:04',	NULL),
+(21,	'Viewed home',	'Registered',	1,	'http://auth.zeroc0d3lab.com/home',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/login',	'GET',	'2019-11-23 08:58:04',	'2019-11-23 08:58:04',	NULL),
+(22,	'Viewed profile/rogahn.lelia',	'Registered',	1,	'http://auth.zeroc0d3lab.com/profile/rogahn.lelia',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/home',	'GET',	'2019-11-23 08:58:12',	'2019-11-23 08:58:12',	NULL),
+(23,	'Viewed profile/rogahn.lelia/edit',	'Registered',	1,	'http://auth.zeroc0d3lab.com/profile/rogahn.lelia/edit',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/rogahn.lelia',	'GET',	'2019-11-23 08:58:14',	'2019-11-23 08:58:14',	NULL),
+(24,	'Edited profile/1/updateUserAccount',	'Registered',	1,	'http://auth.zeroc0d3lab.com/profile/1/updateUserAccount',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/rogahn.lelia/edit',	'PUT',	'2019-11-23 08:58:40',	'2019-11-23 08:58:40',	NULL),
+(25,	'Viewed profile/zeroc0d3/edit',	'Registered',	1,	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/rogahn.lelia/edit',	'GET',	'2019-11-23 08:58:41',	'2019-11-23 08:58:41',	NULL),
+(26,	'Viewed profile/zeroc0d3',	'Registered',	1,	'http://auth.zeroc0d3lab.com/profile/zeroc0d3',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/roles',	'GET',	'2019-11-23 08:59:02',	'2019-11-23 08:59:02',	NULL),
+(27,	'Viewed profile/zeroc0d3/edit',	'Registered',	1,	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3',	'GET',	'2019-11-23 08:59:05',	'2019-11-23 08:59:05',	NULL),
+(28,	'Created avatar/upload',	'Registered',	1,	'http://auth.zeroc0d3lab.com/avatar/upload',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'POST',	'2019-11-23 09:00:46',	'2019-11-23 09:00:46',	NULL),
+(29,	'Viewed images/profile/1/avatar/avatar.jpg',	'Registered',	1,	'http://auth.zeroc0d3lab.com/images/profile/1/avatar/avatar.jpg?1574499646823=',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'GET',	'2019-11-23 09:00:46',	'2019-11-23 09:00:46',	NULL),
+(30,	'Edited profile/zeroc0d3',	'Registered',	1,	'http://auth.zeroc0d3lab.com/profile/zeroc0d3',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'PATCH',	'2019-11-23 09:00:57',	'2019-11-23 09:00:57',	NULL),
+(31,	'Viewed profile/zeroc0d3/edit',	'Registered',	1,	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'GET',	'2019-11-23 09:00:58',	'2019-11-23 09:00:58',	NULL),
+(32,	'Viewed images/profile/1/avatar/avatar.jpeg',	'Registered',	1,	'http://auth.zeroc0d3lab.com/images/profile/1/avatar/avatar.jpeg',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'GET',	'2019-11-23 09:00:58',	'2019-11-23 09:00:58',	NULL),
+(33,	'Logged Out',	'Registered',	1,	'http://auth.zeroc0d3lab.com/logout',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'POST',	'2019-11-23 09:01:01',	'2019-11-23 09:01:01',	NULL),
+(34,	'Failed Login Attempt',	'Guest',	NULL,	'http://auth.zeroc0d3lab.com/login',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/login',	'POST',	'2019-11-23 09:01:10',	'2019-11-23 09:01:10',	NULL),
+(35,	'Failed Login Attempt',	'Guest',	NULL,	'http://auth.zeroc0d3lab.com/login',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/login',	'POST',	'2019-11-23 09:01:17',	'2019-11-23 09:01:17',	NULL),
+(36,	'Logged In',	'Registered',	1,	'http://auth.zeroc0d3lab.com/login',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/login',	'POST',	'2019-11-23 09:01:34',	'2019-11-23 09:01:34',	NULL),
+(37,	'Viewed home',	'Registered',	1,	'http://auth.zeroc0d3lab.com/home',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/login',	'GET',	'2019-11-23 09:01:34',	'2019-11-23 09:01:34',	NULL),
+(38,	'Viewed images/profile/1/avatar/avatar.jpeg',	'Registered',	1,	'http://auth.zeroc0d3lab.com/images/profile/1/avatar/avatar.jpeg',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/home',	'GET',	'2019-11-23 09:01:35',	'2019-11-23 09:01:35',	NULL),
+(39,	'Viewed profile/zeroc0d3',	'Registered',	1,	'http://auth.zeroc0d3lab.com/profile/zeroc0d3',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/home',	'GET',	'2019-11-23 09:01:38',	'2019-11-23 09:01:38',	NULL),
+(40,	'Viewed images/profile/1/avatar/avatar.jpeg',	'Registered',	1,	'http://auth.zeroc0d3lab.com/images/profile/1/avatar/avatar.jpeg',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3',	'GET',	'2019-11-23 09:01:39',	'2019-11-23 09:01:39',	NULL),
+(41,	'Viewed profile/zeroc0d3/edit',	'Registered',	1,	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3',	'GET',	'2019-11-23 09:01:41',	'2019-11-23 09:01:41',	NULL),
+(42,	'Viewed images/profile/1/avatar/avatar.jpeg',	'Registered',	1,	'http://auth.zeroc0d3lab.com/images/profile/1/avatar/avatar.jpeg',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'GET',	'2019-11-23 09:01:42',	'2019-11-23 09:01:42',	NULL),
+(43,	'Edited profile/1/updateUserPassword',	'Registered',	1,	'http://auth.zeroc0d3lab.com/profile/1/updateUserPassword',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'PUT',	'2019-11-23 09:02:04',	'2019-11-23 09:02:04',	NULL),
+(44,	'Viewed profile/zeroc0d3/edit',	'Registered',	1,	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'GET',	'2019-11-23 09:02:05',	'2019-11-23 09:02:05',	NULL),
+(45,	'Viewed images/profile/1/avatar/avatar.jpeg',	'Registered',	1,	'http://auth.zeroc0d3lab.com/images/profile/1/avatar/avatar.jpeg',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'GET',	'2019-11-23 09:02:05',	'2019-11-23 09:02:05',	NULL),
+(46,	'Logged Out',	'Registered',	1,	'http://auth.zeroc0d3lab.com/logout',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3/edit',	'POST',	'2019-11-23 09:02:11',	'2019-11-23 09:02:11',	NULL),
+(47,	'Failed Login Attempt',	'Guest',	NULL,	'http://auth.zeroc0d3lab.com/login',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/login',	'POST',	'2019-11-23 09:02:22',	'2019-11-23 09:02:22',	NULL),
+(48,	'Logged In',	'Registered',	1,	'http://auth.zeroc0d3lab.com/login',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/login',	'POST',	'2019-11-23 09:02:30',	'2019-11-23 09:02:30',	NULL),
+(49,	'Viewed home',	'Registered',	1,	'http://auth.zeroc0d3lab.com/home',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/login',	'GET',	'2019-11-23 09:02:30',	'2019-11-23 09:02:30',	NULL),
+(50,	'Viewed images/profile/1/avatar/avatar.jpeg',	'Registered',	1,	'http://auth.zeroc0d3lab.com/images/profile/1/avatar/avatar.jpeg',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/home',	'GET',	'2019-11-23 09:02:30',	'2019-11-23 09:02:30',	NULL),
+(51,	'Viewed images/profile/1/avatar/avatar.jpeg',	'Registered',	1,	'http://auth.zeroc0d3lab.com/images/profile/1/avatar/avatar.jpeg',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/roles',	'GET',	'2019-11-23 09:02:35',	'2019-11-23 09:02:35',	NULL),
+(52,	'Viewed users',	'Registered',	1,	'http://auth.zeroc0d3lab.com/users',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/roles',	'GET',	'2019-11-23 09:02:40',	'2019-11-23 09:02:40',	NULL),
+(53,	'Viewed images/profile/1/avatar/avatar.jpeg',	'Registered',	1,	'http://auth.zeroc0d3lab.com/images/profile/1/avatar/avatar.jpeg',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/users',	'GET',	'2019-11-23 09:02:41',	'2019-11-23 09:02:41',	NULL),
+(54,	'Viewed users/2/edit',	'Registered',	1,	'http://auth.zeroc0d3lab.com/users/2/edit',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/users',	'GET',	'2019-11-23 09:02:51',	'2019-11-23 09:02:51',	NULL),
+(55,	'Viewed images/profile/1/avatar/avatar.jpeg',	'Registered',	1,	'http://auth.zeroc0d3lab.com/images/profile/1/avatar/avatar.jpeg',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/users/2/edit',	'GET',	'2019-11-23 09:02:52',	'2019-11-23 09:02:52',	NULL),
+(56,	'Edited users/2',	'Registered',	1,	'http://auth.zeroc0d3lab.com/users/2',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/users/2/edit',	'PUT',	'2019-11-23 09:03:29',	'2019-11-23 09:03:29',	NULL),
+(57,	'Edited users/2',	'Registered',	1,	'http://auth.zeroc0d3lab.com/users/2',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/users/2/edit',	'PUT',	'2019-11-23 09:03:29',	'2019-11-23 09:03:29',	NULL),
+(58,	'Viewed users/2/edit',	'Registered',	1,	'http://auth.zeroc0d3lab.com/users/2/edit',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/users/2/edit',	'GET',	'2019-11-23 09:03:30',	'2019-11-23 09:03:30',	NULL),
+(59,	'Viewed images/profile/1/avatar/avatar.jpeg',	'Registered',	1,	'http://auth.zeroc0d3lab.com/images/profile/1/avatar/avatar.jpeg',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/users/2/edit',	'GET',	'2019-11-23 09:03:31',	'2019-11-23 09:03:31',	NULL),
+(60,	'Viewed profile/zeroc0d3',	'Registered',	1,	'http://auth.zeroc0d3lab.com/profile/zeroc0d3',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/users/2/edit',	'GET',	'2019-11-23 09:03:33',	'2019-11-23 09:03:33',	NULL),
+(61,	'Viewed images/profile/1/avatar/avatar.jpeg',	'Registered',	1,	'http://auth.zeroc0d3lab.com/images/profile/1/avatar/avatar.jpeg',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3',	'GET',	'2019-11-23 09:03:34',	'2019-11-23 09:03:34',	NULL),
+(62,	'Logged Out',	'Registered',	1,	'http://auth.zeroc0d3lab.com/logout',	'114.124.140.103',	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',	'id,en-US;q=0.9,en;q=0.8,und;q=0.7',	'http://auth.zeroc0d3lab.com/profile/zeroc0d3',	'POST',	'2019-11-23 09:03:39',	'2019-11-23 09:03:39',	NULL);
 
 DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
@@ -236,13 +279,13 @@ DROP TABLE IF EXISTS `profiles`;
 CREATE TABLE `profiles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) unsigned NOT NULL,
-  `theme_id` int(10) unsigned NOT NULL DEFAULT 1,
+  `theme_id` int(10) unsigned NOT NULL DEFAULT '1',
   `location` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `bio` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bio` text COLLATE utf8mb4_unicode_ci,
   `twitter_username` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `github_username` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `avatar` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `avatar_status` tinyint(1) NOT NULL DEFAULT 0,
+  `avatar_status` tinyint(1) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -253,7 +296,7 @@ CREATE TABLE `profiles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `profiles` (`id`, `user_id`, `theme_id`, `location`, `bio`, `twitter_username`, `github_username`, `avatar`, `avatar_status`, `created_at`, `updated_at`) VALUES
-(1,	1,	1,	NULL,	NULL,	NULL,	NULL,	NULL,	0,	'2019-11-19 15:31:16',	'2019-11-19 15:31:16'),
+(1,	1,	1,	NULL,	NULL,	NULL,	'zeroc0d3',	'/images/profile/1/avatar/avatar.jpeg',	1,	'2019-11-19 15:31:16',	'2019-11-23 09:00:57'),
 (2,	2,	1,	NULL,	NULL,	NULL,	NULL,	NULL,	0,	'2019-11-19 15:31:16',	'2019-11-19 15:31:16');
 
 DROP TABLE IF EXISTS `roles`;
@@ -262,7 +305,7 @@ CREATE TABLE `roles` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `level` int(11) NOT NULL DEFAULT 1,
+  `level` int(11) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -292,7 +335,7 @@ CREATE TABLE `role_user` (
 
 INSERT INTO `role_user` (`id`, `role_id`, `user_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1,	1,	1,	'2019-11-19 15:31:16',	'2019-11-19 15:31:16',	NULL),
-(2,	2,	2,	'2019-11-19 15:31:16',	'2019-11-19 15:31:16',	NULL);
+(4,	2,	2,	'2019-11-23 09:03:30',	'2019-11-23 09:03:30',	NULL);
 
 DROP TABLE IF EXISTS `social_logins`;
 CREATE TABLE `social_logins` (
@@ -314,7 +357,7 @@ CREATE TABLE `themes` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `notes` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   `taggable_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `taggable_id` bigint(20) unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -366,7 +409,7 @@ CREATE TABLE `users` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `activated` tinyint(1) NOT NULL DEFAULT 0,
+  `activated` tinyint(1) NOT NULL DEFAULT '0',
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `signup_ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `signup_confirmation_ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -383,7 +426,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `users` (`id`, `name`, `first_name`, `last_name`, `email`, `password`, `remember_token`, `activated`, `token`, `signup_ip_address`, `signup_confirmation_ip_address`, `signup_sm_ip_address`, `admin_ip_address`, `updated_ip_address`, `deleted_ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1,	'rogahn.lelia',	'Johan',	'Gutkowski',	'admin@admin.com',	'$2y$10$4cJjYYHp88v26qQ.Jc/LzOaxzHX3/JQZmSykd4LQwWwYNBiUFahRm',	'yQehyY82B5vYRY1VUdqGegLTP3T19EtKjxGKcHLUT8KY60icJxa60O2g0yQ2',	1,	'O4jiSMGf7m8bhk4XqrA95SIJYZwSBg2RMYXkIRAJb4YL4yvfeoxIBCZ6ii1zsVxq',	NULL,	'61.195.134.243',	NULL,	'62.142.125.129',	NULL,	NULL,	'2019-11-19 15:31:16',	'2019-11-19 15:31:16',	NULL),
-(2,	'frederick.collins',	'Hope',	'Franecki',	'user@user.com',	'$2y$10$aTgTr8OxE3h3zWejVFCN9eSW5IH10UB1ZEX7jQAuEWsa5Gv22yWeC',	NULL,	1,	'TShGLIAKjIY8jv6wp104ul1B96HtqaMexg7vCNurmo9h6TsJIiTJoejlPZPHXxRF',	'125.213.103.144',	'219.17.231.37',	NULL,	NULL,	NULL,	NULL,	'2019-11-19 15:31:16',	'2019-11-19 15:31:16',	NULL);
+(1,	'zeroc0d3',	'ZeroC0D3',	'Team',	'zeroc0d3.team@gmail.com',	'$2y$10$c/ePkH/JA1ywlCJ0dOJ8.u/EZ8aI4qyOP5eaaQt7aHGEmwkNHxy/6',	'd0BPmNytOqjO7SjQLx8UdsuM9Vlf9qUnd6Wjl1I9hKXpCwUqxYsmI8RObMZd',	1,	'O4jiSMGf7m8bhk4XqrA95SIJYZwSBg2RMYXkIRAJb4YL4yvfeoxIBCZ6ii1zsVxq',	NULL,	'61.195.134.243',	NULL,	'62.142.125.129',	'114.124.140.103',	NULL,	'2019-11-19 15:31:16',	'2019-11-23 09:02:05',	NULL),
+(2,	'guest',	'Guest',	'ZeroC0D3Lab',	'user@zeroc0d3labcom',	'$2y$10$It3u4qGpcbrtFnyq8SGvl.SvthiFgriz2FYQHzJgJ42CXUtrGHmye',	NULL,	1,	'TShGLIAKjIY8jv6wp104ul1B96HtqaMexg7vCNurmo9h6TsJIiTJoejlPZPHXxRF',	'125.213.103.144',	'219.17.231.37',	NULL,	NULL,	'114.124.140.103',	NULL,	'2019-11-19 15:31:16',	'2019-11-23 09:03:30',	NULL);
 
--- 2019-11-19 15:46:02
+-- 2019-11-23 09:04:26

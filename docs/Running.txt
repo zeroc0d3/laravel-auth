@@ -23,3 +23,10 @@ mkdir -p /data/www/laravel-auth/{preprod,production,staging}/{shared/log,shared/
 mkdir -p /data/www/laravel-auth/{preprod,production,staging}/shared/src/storage/debugbar
 mkdir -p /data/www/laravel-auth/{preprod,production,staging}/shared/src/storage/framework/{cache,sessions,views}
 mkdir -p /data/www/laravel-auth/{preprod,production,staging}/shared/src/storage/{logs,users}
+
+
+MySQL User
+======================
+CREATE USER 'laravel-auth-user'@'localhost' IDENTIFIED BY 'LaravelAuthUser_654123';
+GRANT ALL PRIVILEGES ON *.* TO 'laravel-auth-user'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
