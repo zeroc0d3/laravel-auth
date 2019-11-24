@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.10.1"
+lock "~> 3.11.2"
 
 set :application, "laravel-auth"
 set :repo_url, "git@gitlab.com:zeroc0d3lab-laravel/laravel-auth.git"
