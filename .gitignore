@@ -3,8 +3,4 @@ docker/compose/data/
 src/.env
 src/node_modules/
 src/vendor/
-<<<<<<< HEAD
 log/
-=======
-log/
->>>>>>> l6-dfdenni-refactoring
