@@ -1,4 +1,4 @@
--- Adminer 4.6.3 MySQL dump
+-- Adminer 4.7.5 MySQL dump
 
 SET NAMES utf8;
 SET time_zone = '+00:00';
@@ -28,7 +28,7 @@ CREATE TABLE `failed_jobs` (
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -39,7 +39,7 @@ CREATE TABLE `laravel2step` (
   `userId` bigint(20) unsigned NOT NULL,
   `authCode` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `authCount` int(11) NOT NULL,
-  `authStatus` tinyint(1) NOT NULL DEFAULT 0,
+  `authStatus` tinyint(1) NOT NULL DEFAULT '0',
   `authDate` datetime DEFAULT NULL,
   `requestDate` datetime DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE `laravel_blocker` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `typeId` int(10) unsigned NOT NULL,
   `value` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `note` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `note` longtext COLLATE utf8mb4_unicode_ci,
   `userId` bigint(20) unsigned DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -87,11 +87,11 @@ CREATE TABLE `laravel_logger_activity` (
   `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `userType` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `userId` int(11) DEFAULT NULL,
-  `route` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `route` longtext COLLATE utf8mb4_unicode_ci,
   `ipAddress` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `userAgent` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `userAgent` text COLLATE utf8mb4_unicode_ci,
   `locale` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `referer` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `referer` longtext COLLATE utf8mb4_unicode_ci,
   `methodType` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -172,13 +172,13 @@ DROP TABLE IF EXISTS `profiles`;
 CREATE TABLE `profiles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) unsigned NOT NULL,
-  `theme_id` int(10) unsigned NOT NULL DEFAULT 1,
+  `theme_id` int(10) unsigned NOT NULL DEFAULT '1',
   `location` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `bio` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bio` text COLLATE utf8mb4_unicode_ci,
   `twitter_username` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `github_username` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `avatar` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `avatar_status` tinyint(1) NOT NULL DEFAULT 0,
+  `avatar_status` tinyint(1) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -195,7 +195,7 @@ CREATE TABLE `roles` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `level` int(11) NOT NULL DEFAULT 1,
+  `level` int(11) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -240,7 +240,7 @@ CREATE TABLE `themes` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `notes` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   `taggable_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `taggable_id` bigint(20) unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -263,7 +263,7 @@ CREATE TABLE `users` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `activated` tinyint(1) NOT NULL DEFAULT 0,
+  `activated` tinyint(1) NOT NULL DEFAULT '0',
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `signup_ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `signup_confirmation_ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -280,4 +280,4 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
--- 2019-11-21 03:00:47
+-- 2019-11-23 09:04:51
