@@ -20,13 +20,16 @@ class UsersTableSeeder extends Seeder
         $userRole = Role::whereName('User')->first();
 
         // Seed test admin
-        $seededAdminEmail = 'admin@admin.com';
+        $seededAdminEmail = 'admin@zeroc0d3lab.local';
         $user = User::where('email', '=', $seededAdminEmail)->first();
         if ($user === null) {
             $user = User::create([
-                'name'                           => $faker->userName,
-                'first_name'                     => $faker->firstName,
-                'last_name'                      => $faker->lastName,
+                // 'name'                           => $faker->userName,
+                // 'first_name'                     => $faker->firstName,
+                // 'last_name'                      => $faker->lastName,
+                'name'                           => 'admin',
+                'first_name'                     => 'Admin Laravel',
+                'last_name'                      => 'Shipment',
                 'email'                          => $seededAdminEmail,
                 'password'                       => Hash::make('password'),
                 'token'                          => str_random(64),
@@ -41,13 +44,16 @@ class UsersTableSeeder extends Seeder
         }
 
         // Seed test user
-        $user = User::where('email', '=', 'user@user.com')->first();
+        $user = User::where('email', '=', 'user@zeroc0d3lab.local')->first();
         if ($user === null) {
             $user = User::create([
-                'name'                           => $faker->userName,
-                'first_name'                     => $faker->firstName,
-                'last_name'                      => $faker->lastName,
-                'email'                          => 'user@user.com',
+                // 'name'                           => $faker->userName,
+                // 'first_name'                     => $faker->firstName,
+                // 'last_name'                      => $faker->lastName,
+                'name'                           => 'user',
+                'first_name'                     => 'User Laravel',
+                'last_name'                      => 'Shipment',
+                'email'                          => 'user@zeroc0d3lab.local',
                 'password'                       => Hash::make('password'),
                 'token'                          => str_random(64),
                 'activated'                      => true,
