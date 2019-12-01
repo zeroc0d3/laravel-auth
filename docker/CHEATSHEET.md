@@ -40,7 +40,7 @@ SELECT host,user FROM user;
 +-----------+------------------+
 | host      | user             |
 +-----------+------------------+
-| %         | bldev            |
+| %         | zeroc0d3         |
 | %         | root             |
 | localhost | mysql.infoschema |
 | localhost | mysql.session    |
@@ -116,7 +116,7 @@ psql
                                    List of roles
  Role name |                         Attributes                         | Member of
 -----------+------------------------------------------------------------+-----------
- bldev  | Superuser                                                  | {}
+ zeroc0d3  | Superuser                                                  | {}
  postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
 ```
 
@@ -149,7 +149,7 @@ ALTER ROLE deploy SUPERUSER;
  Role name  |                         Attributes                         | Member of
 ------------+------------------------------------------------------------+-----------
  deploy     | Superuser                                                  | {}
- bldev      | Superuser                                                  | {}
+ zeroc0d3   | Superuser                                                  | {}
  postgres   | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
 ```
 
@@ -165,7 +165,7 @@ ALTER USER [username] RENAME TO '[username_new]';
  Role name  |                         Attributes                         | Member of
 ------------+------------------------------------------------------------+-----------
  deploy_new | Superuser                                                  | {}
- bldev      | Superuser                                                  | {}
+ zeroc0d3   | Superuser                                                  | {}
  postgres   | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
 ```
 
@@ -181,6 +181,6 @@ ALTER DATABASE [db_name] RENAME TO '[db_name_new]';
  Role name  |                         Attributes                         | Member of
 ------------+------------------------------------------------------------+-----------
  deploy_new | Superuser                                                  | {}
- bldev      | Superuser                                                  | {}
+ zeroc0d3   | Superuser                                                  | {}
  postgres   | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
 ```
