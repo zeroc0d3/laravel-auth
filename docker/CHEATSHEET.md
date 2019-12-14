@@ -13,8 +13,19 @@ mysql -u root -p
 * Create user
 
 ```
+CREATE USER 'admin'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+```
+
+* Set Password
+
+```
 SET PASSWORD FOR '[username]'@'%' = '*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19';   ## password='password'
 GRANT ALL PRIVILEGES ON *.* TO '[username]'@'%' WITH GRANT OPTION;
+---
+SET PASSWORD FOR 'admin'@'%' = '*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19';   ## password='password'
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
 ```
 
 * Create/drop database
