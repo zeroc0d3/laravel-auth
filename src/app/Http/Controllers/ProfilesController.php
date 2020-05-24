@@ -13,6 +13,7 @@ use App\Traits\CaptureIpTrait;
 use File;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Image;
 use jeremykenedy\Uuid\Uuid;
@@ -123,7 +124,7 @@ class ProfilesController extends Controller
 
         $ipAddress = new CaptureIpTrait();
 
-        if ($user->profile == null) {
+        if ($user->profile === null) {
             $profile = new Profile();
             $profile->fill($input);
             $user->profile()->save($profile);
@@ -149,11 +150,11 @@ class ProfilesController extends Controller
     {
         $currentUser = \Auth::user();
         $user = User::findOrFail($id);
-        $emailCheck = ($request->input('email') != '') && ($request->input('email') != $user->email);
+        $emailCheck = ($request->input('email') !== '') && ($request->input('email') !== $user->email);
         $ipAddress = new CaptureIpTrait();
         $rules = [];
 
-        if ($user->name != $request->input('name')) {
+        if ($user->name !== $request->input('name')) {
             $usernameRules = [
                 'name' => 'required|max:255|unique:users',
             ];
@@ -183,9 +184,9 @@ class ProfilesController extends Controller
             return back()->withErrors($validator)->withInput();
         }
 
-        $user->name = $request->input('name');
-        $user->first_name = $request->input('first_name');
-        $user->last_name = $request->input('last_name');
+        $user->name = strip_tags($request->input('name'));
+        $user->first_name = strip_tags($request->input('first_name'));
+        $user->last_name = strip_tags($request->input('last_name'));
 
         if ($emailCheck) {
             $user->email = $request->input('email');
@@ -212,8 +213,8 @@ class ProfilesController extends Controller
         $user = User::findOrFail($id);
         $ipAddress = new CaptureIpTrait();
 
-        if ($request->input('password') != null) {
-            $user->password = bcrypt($request->input('password'));
+        if ($request->input('password') !== null) {
+            $user->password = Hash::make($request->input('password'));
         }
 
         $user->updated_ip_address = $ipAddress->getClientIp();
@@ -282,7 +283,7 @@ class ProfilesController extends Controller
         $user = User::findOrFail($id);
         $ipAddress = new CaptureIpTrait();
 
-        if ($user->id != $currentUser->id) {
+        if ($user->id !== $currentUser->id) {
             return redirect('profile/'.$user->name.'/edit')->with('error', trans('profile.errorDeleteNotYour'));
         }
 

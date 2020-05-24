@@ -1,30 +1,26 @@
-## Laravel-Auth
+## Laravel Auth
 
-#### Laravel-Auth is a Complete Build of Laravel 6 with Email Registration Verification, Social Authentication, User Roles and Permissions, User Profiles, and Admin restricted user management system. Built on Bootstrap 4.
+#### Laravel Auth is a Complete Build of Laravel 7 with Email Registration Verification, Social Authentication, User Roles and Permissions, User Profiles, and Admin restricted user management system. Built on Bootstrap 4.
 [![Build Status](https://travis-ci.org/jeremykenedy/laravel-auth.svg?branch=master)](https://travis-ci.org/jeremykenedy/laravel-auth)
 [![StyleCI](https://styleci.io/repos/44714043/shield?branch=master)](https://styleci.io/repos/44714043)
 [![Build Status](https://scrutinizer-ci.com/g/jeremykenedy/laravel-auth/badges/build.png?b=master)](https://scrutinizer-ci.com/g/jeremykenedy/laravel-auth/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jeremykenedy/laravel-auth/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jeremykenedy/laravel-auth/?branch=master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/jeremykenedy/laravel-auth/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors)
 [![MadeWithLaravel.com shield](https://madewithlaravel.com/storage/repo-shields/1342-shield.svg)](https://madewithlaravel.com/p/laravel-auth/shield-link)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
  ### Sponsor
- <table>
-     <tr>
-         <td>
-             <img src="https://s3.amazonaws.com/sponsers/sponsor-logo.png" alt="Auth0">
-         </td>
-         <td>
-             If you want to quickly add secure token-based authentication to Laravel apps, feel free to check Auth0's Laravel SDK and free plan at <a href="https://auth0.com/overview?utm_source=GHsponsor&utm_medium=GHsponsor&utm_campaign=laravel-auth&utm_content=auth" target="_blank">https://auth0.com/overview</a>.
-         </td>
-     </tr>
- </table>
-
-<a href="https://www.patreon.com/bePatron?u=10119959" title="Become a Patreon">
-    <img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patreon" width="120px" >
-</a>
+<table>
+    <tr>
+        <td>
+            <img src="https://cdn.auth0.com/styleguide/components/1.0.8/media/logos/img/badge.png" alt="Auth0" width="50">
+        </td>
+        <td>
+            If you want to quickly add secure token-based authentication to Laravel apps, feel free to check Auth0's Laravel SDK and free plan at <a href="https://auth0.com/overview?utm_source=GHsponsor&utm_medium=GHsponsor&utm_campaign=laravel-auth&utm_content=auth" target="_blank">https://auth0.com/overview</a>.
+        </td>
+    </tr>
+</table>
 
 #### Table of contents
 - [About](#about)
@@ -51,29 +47,29 @@
 - [Contributors](#Contributors)
 
 ### About
-Laravel 6.0 with user authentication, registration with email confirmation, social media authentication, password recovery, and captcha protection. Uses official [Bootstrap 4](https://getbootstrap.com). This also makes full use of Controllers for the routes, templates for the views, and makes use of middleware for routing. Project can be stood up in minutes.
+Laravel 7 with user authentication, registration with email confirmation, social media authentication, password recovery, and captcha protection. Uses official [Bootstrap 4](https://getbootstrap.com). This also makes full use of Controllers for the routes, templates for the views, and makes use of middleware for routing. Project can be stood up in minutes.
 
 ### Features
-#### A [Laravel](https://laravel.com/) 6.0.x with minimal [Bootstrap](https://getbootstrap.com) 4.0.x project.
+#### A [Laravel](https://laravel.com/) 7.x with [Bootstrap](https://getbootstrap.com) 4.x project.
 
-| Laravel-Auth Features  |
+| Laravel Auth Features  |
 | :------------ |
-|Built on [Laravel](https://laravel.com/) 6.0|
+|Built on [Laravel](https://laravel.com/) 7|
 |Built on [Bootstrap](https://getbootstrap.com/) 4|
 |Uses [MySQL](https://github.com/mysql) Database (can be changed)|
-|Uses [Artisan](https://laravel.com/docs/6.x/artisan) to manage database migration, schema creations, and create/publish page controller templates|
+|Uses [Artisan](https://laravel.com/docs/master/artisan) to manage database migration, schema creations, and create/publish page controller templates|
 |Dependencies are managed with [COMPOSER](https://getcomposer.org/)|
 |Laravel Scaffolding **User** and **Administrator Authentication**.|
 |User [Socialite Logins](https://github.com/laravel/socialite) ready to go - See API list used below|
 |[Google Maps API v3](https://developers.google.com/maps/documentation/javascript/) for User Location lookup and Geocoding|
 |CRUD (Create, Read, Update, Delete) Themes Management|
 |CRUD (Create, Read, Update, Delete) User Management|
-|Robust [Laravel Logging](https://laravel.com/docs/6.x/errors#logging) with admin UI using MonoLog|
+|Robust [Laravel Logging](https://laravel.com/docs/master/errors#logging) with admin UI using MonoLog|
 |Google [reCaptcha Protection with Google API](https://developers.google.com/recaptcha/)|
 |User Registration with email verification|
-|Makes use of Laravel [Mix](https://laravel.com/docs/6.x/mix) to compile assets|
-|Makes use of [Language Localization Files](https://laravel.com/docs/6.x/localization)|
-|Active Nav states using [Laravel Requests](https://laravel.com/docs/6.x/requests)|
+|Makes use of Laravel [Mix](https://laravel.com/docs/master/mix) to compile assets|
+|Makes use of [Language Localization Files](https://laravel.com/docs/master/localization)|
+|Active Nav states using [Laravel Requests](https://laravel.com/docs/master/requests)|
 |Restrict User Email Activation Attempts|
 |Capture IP to users table upon signup|
 |Uses [Laravel Debugger](https://github.com/barryvdh/laravel-debugbar) for development|
@@ -85,7 +81,7 @@ Laravel 6.0 with user authentication, registration with email confirmation, soci
 |User Login with remember password|
 |User [Roles/ACL Implementation](https://github.com/jeremykenedy/laravel-roles)|
 |Roles and Permissions GUI|
-|Makes use of [Laravel's Soft Delete Structure](https://laravel.com/docs/6.x/eloquent#soft-deleting)|
+|Makes use of [Laravel's Soft Delete Structure](https://laravel.com/docs/master/eloquent#soft-deleting)|
 |Soft Deleted Users Management System|
 |Permanently Delete Soft Deleted Users|
 |User Delete Account with Goodbye email|
@@ -133,10 +129,15 @@ php artisan vendor:publish --tag=laravel2step
 2. From the projects root folder run `yarn run dev` or `yarn run production`
   * You can watch assets with `yarn run watch`
 
+##### Using NPM:
+1. From the projects root folder run `npm install`
+2. From the projects root folder run `npm run dev` or `npm run production`
+  * You can watch assets with `npm run watch`
+
 #### Optionally Build Cache
 1. From the projects root folder run `php artisan config:cache`
 
-###### And thats it with the caveat of setting up and configuring your development environment. I recommend [Laravel Homestead](https://laravel.com/docs/6.x/homestead)
+###### And thats it with the caveat of setting up and configuring your development environment. I recommend [Laravel Homestead](https://laravel.com/docs/master/homestead)
 
 ### Seeds
 ##### Seeded Roles
@@ -227,12 +228,11 @@ php artisan vendor:publish --tag=laravel2step
 |        | PUT|PATCH                              | blocker/{blocker}                     | laravelblocker::blocker.update                | jeremykenedy\LaravelBlocker\App\Http\Controllers\LaravelBlockerController@update                                | web,checkblocked,auth,activated,role:admin,activity,twostep  |
 |        | GET|HEAD                               | blocker/{blocker}                     | laravelblocker::blocker.show                  | jeremykenedy\LaravelBlocker\App\Http\Controllers\LaravelBlockerController@show                                  | web,checkblocked,auth,activated,role:admin,activity,twostep  |
 |        | GET|HEAD                               | blocker/{blocker}/edit                | laravelblocker::blocker.edit                  | jeremykenedy\LaravelBlocker\App\Http\Controllers\LaravelBlockerController@edit                                  | web,checkblocked,auth,activated,role:admin,activity,twostep  |
-|        | GET|POST|HEAD                          | broadcasting/auth                     |                                               | Illuminate\Broadcasting\BroadcastController@authenticate                                                        | web                                                          |
 |        | GET|HEAD                               | exceeded                              | exceeded                                      | App\Http\Controllers\Auth\ActivateController@exceeded                                                           | web,activity,checkblocked,auth                               |
 |        | GET|HEAD                               | home                                  | public.home                                   | App\Http\Controllers\UserController@index                                                                       | web,auth,activated,activity,twostep,checkblocked             |
 |        | GET|HEAD                               | images/profile/{id}/avatar/{image}    |                                               | App\Http\Controllers\ProfilesController@userProfileAvatar                                                       | web,auth,activated,currentUser,activity,twostep,checkblocked |
-|        | GET|HEAD                               | login                                 | login                                         | App\Http\Controllers\Auth\LoginController@showLoginForm                                                         | web,guest                                                    |
 |        | POST                                   | login                                 |                                               | App\Http\Controllers\Auth\LoginController@login                                                                 | web,guest                                                    |
+|        | GET|HEAD                               | login                                 | login                                         | App\Http\Controllers\Auth\LoginController@showLoginForm                                                         | web,guest                                                    |
 |        | POST                                   | logout                                | logout                                        | App\Http\Controllers\Auth\LoginController@logout                                                                | web                                                          |
 |        | GET|HEAD                               | logout                                | logout                                        | App\Http\Controllers\Auth\LoginController@logout                                                                | web,auth,activated,activity,checkblocked                     |
 |        | GET|HEAD                               | logs                                  |                                               | Rap2hpoutre\LaravelLogViewer\LogViewerController@index                                                          | web,auth,activated,role:admin,activity,twostep,checkblocked  |
@@ -269,8 +269,8 @@ php artisan vendor:publish --tag=laravel2step
 |        | GET|HEAD                               | role-deleted/{id}                     | laravelroles::role-show-deleted               | jeremykenedy\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@show                               | web,auth,role:admin                                          |
 |        | DELETE                                 | role-destroy/{id}                     | laravelroles::role-item-destroy               | jeremykenedy\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@destroy                            | web,auth,role:admin                                          |
 |        | PUT                                    | role-restore/{id}                     | laravelroles::role-restore                    | jeremykenedy\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@restoreRole                        | web,auth,role:admin                                          |
-|        | GET|HEAD                               | roles                                 | laravelroles::roles.index                     | jeremykenedy\LaravelRoles\App\Http\Controllers\LaravelRolesController@index                                     | web,auth,role:admin                                          |
 |        | POST                                   | roles                                 | laravelroles::roles.store                     | jeremykenedy\LaravelRoles\App\Http\Controllers\LaravelRolesController@store                                     | web,auth,role:admin                                          |
+|        | GET|HEAD                               | roles                                 | laravelroles::roles.index                     | jeremykenedy\LaravelRoles\App\Http\Controllers\LaravelRolesController@index                                     | web,auth,role:admin                                          |
 |        | GET|HEAD                               | roles-deleted                         | laravelroles::roles-deleted                   | jeremykenedy\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@index                              | web,auth,role:admin                                          |
 |        | DELETE                                 | roles-deleted-destroy-all             | laravelroles::destroy-all-deleted-roles       | jeremykenedy\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@destroyAllDeletedRoles             | web,auth,role:admin                                          |
 |        | POST                                   | roles-deleted-restore-all             | laravelroles::roles-deleted-restore-all       | jeremykenedy\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@restoreAllDeletedRoles             | web,auth,role:admin                                          |
@@ -285,6 +285,7 @@ php artisan vendor:publish --tag=laravel2step
 |        | POST                                   | search-users                          | search-users                                  | App\Http\Controllers\UsersManagementController@search                                                           | web,auth,activated,role:admin,activity,twostep,checkblocked  |
 |        | GET|HEAD                               | social/handle/{provider}              | social.handle                                 | App\Http\Controllers\Auth\SocialController@getSocialHandle                                                      | web,activity,checkblocked                                    |
 |        | GET|HEAD                               | social/redirect/{provider}            | social.redirect                               | App\Http\Controllers\Auth\SocialController@getSocialRedirect                                                    | web,activity,checkblocked                                    |
+|        | GET|HEAD                               | terms                                 | terms                                         | App\Http\Controllers\TermsController@terms                                                                      | web,checkblocked                                             |
 |        | GET|HEAD                               | themes                                | themes                                        | App\Http\Controllers\ThemesManagementController@index                                                           | web,auth,activated,role:admin,activity,twostep,checkblocked  |
 |        | POST                                   | themes                                | themes.store                                  | App\Http\Controllers\ThemesManagementController@store                                                           | web,auth,activated,role:admin,activity,twostep,checkblocked  |
 |        | GET|HEAD                               | themes/create                         | themes.create                                 | App\Http\Controllers\ThemesManagementController@create                                                          | web,auth,activated,role:admin,activity,twostep,checkblocked  |
@@ -296,9 +297,9 @@ php artisan vendor:publish --tag=laravel2step
 |        | POST                                   | users                                 | users.store                                   | App\Http\Controllers\UsersManagementController@store                                                            | web,auth,activated,role:admin,activity,twostep,checkblocked  |
 |        | GET|HEAD                               | users/create                          | users.create                                  | App\Http\Controllers\UsersManagementController@create                                                           | web,auth,activated,role:admin,activity,twostep,checkblocked  |
 |        | GET|HEAD                               | users/deleted                         | deleted.index                                 | App\Http\Controllers\SoftDeletesController@index                                                                | web,auth,activated,role:admin,activity,twostep,checkblocked  |
-|        | PUT|PATCH                              | users/deleted/{deleted}               | deleted.update                                | App\Http\Controllers\SoftDeletesController@update                                                               | web,auth,activated,role:admin,activity,twostep,checkblocked  |
-|        | DELETE                                 | users/deleted/{deleted}               | deleted.destroy                               | App\Http\Controllers\SoftDeletesController@destroy                                                              | web,auth,activated,role:admin,activity,twostep,checkblocked  |
 |        | GET|HEAD                               | users/deleted/{deleted}               | deleted.show                                  | App\Http\Controllers\SoftDeletesController@show                                                                 | web,auth,activated,role:admin,activity,twostep,checkblocked  |
+|        | DELETE                                 | users/deleted/{deleted}               | deleted.destroy                               | App\Http\Controllers\SoftDeletesController@destroy                                                              | web,auth,activated,role:admin,activity,twostep,checkblocked  |
+|        | PUT|PATCH                              | users/deleted/{deleted}               | deleted.update                                | App\Http\Controllers\SoftDeletesController@update                                                               | web,auth,activated,role:admin,activity,twostep,checkblocked  |
 |        | DELETE                                 | users/{user}                          | user.destroy                                  | App\Http\Controllers\UsersManagementController@destroy                                                          | web,auth,activated,role:admin,activity,twostep,checkblocked  |
 |        | PUT|PATCH                              | users/{user}                          | users.update                                  | App\Http\Controllers\UsersManagementController@update                                                           | web,auth,activated,role:admin,activity,twostep,checkblocked  |
 |        | GET|HEAD                               | users/{user}                          | users.show                                    | App\Http\Controllers\UsersManagementController@show                                                             | web,auth,activated,role:admin,activity,twostep,checkblocked  |
@@ -380,16 +381,16 @@ APP_ENV=local
 APP_KEY=
 APP_DEBUG=true
 APP_URL=http://localhost
-APP_PROJECT_VERSION=5
+APP_PROJECT_VERSION=7
 
 LOG_CHANNEL=stack
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=laravelAuth
-DB_USERNAME=homestead
-DB_PASSWORD=secret
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=
 
 BROADCAST_DRIVER=pusher
 CACHE_DRIVER=file
@@ -401,22 +402,26 @@ REDIS_HOST=127.0.0.1
 REDIS_PASSWORD=null
 REDIS_PORT=6379
 
-MAIL_DRIVER=smtp
+MAIL_MAILER=smtp
 MAIL_HOST=smtp.mailtrap.io
 MAIL_PORT=2525
 MAIL_USERNAME=null
 MAIL_PASSWORD=null
 MAIL_ENCRYPTION=null
-
-MAIL_FROM_ADDRESS=
-MAIL_FROM_NAME=''
+MAIL_FROM_ADDRESS=null
+MAIL_FROM_NAME="${APP_NAME}"
 
 EMAIL_EXCEPTION_ENABLED=false
-EMAIL_EXCEPTION_FROM=email@email.com
+EMAIL_EXCEPTION_FROM="${MAIL_FROM_ADDRESS}"
 EMAIL_EXCEPTION_TO='email1@gmail.com, email2@gmail.com'
 EMAIL_EXCEPTION_CC=''
 EMAIL_EXCEPTION_BCC=''
 EMAIL_EXCEPTION_SUBJECT=''
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
 
 PUSHER_APP_ID=
 PUSHER_APP_KEY=
@@ -441,7 +446,7 @@ LARAVEL_2STEP_ENABLED=false
 LARAVEL_2STEP_DATABASE_CONNECTION=mysql
 LARAVEL_2STEP_DATABASE_TABLE=laravel2step
 LARAVEL_2STEP_USER_MODEL=App\User
-LARAVEL_2STEP_EMAIL_FROM="jeremykenedy@gmail.com"
+LARAVEL_2STEP_EMAIL_FROM=
 LARAVEL_2STEP_EMAIL_FROM_NAME="Laravel 2 Step Verification"
 LARAVEL_2STEP_EMAIL_SUBJECT='Laravel 2 Step Verification'
 LARAVEL_2STEP_EXCEEDED_COUNT=3
@@ -487,7 +492,7 @@ LARAVEL_LOGGER_FONT_AWESOME_CDN_URL=https://maxcdn.bootstrapcdn.com/font-awesome
 LARAVEL_LOGGER_BOOTSTRAP_CSS_CDN_ENABLED=false
 LARAVEL_LOGGER_BOOTSTRAP_CSS_CDN_URL=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
 
-LARAVEL_BLOCKER_USER_MODEL='App\Models\User'
+LARAVEL_BLOCKER_USER_MODEL=App\Models\User
 LARAVEL_BLOCKER_AUTH_ENABLED=true
 LARAVEL_BLOCKER_ROLES_ENABLED=true
 LARAVEL_BLOCKER_FLASH_MESSAGES_ENABLED=false
@@ -497,73 +502,97 @@ LARAVEL_BLOCKER_BLADE_PLACEMENT_JS='footer_scripts'
 LARAVEL_BLOCKER_USE_TYPES_SEED_PUBLISHED=true
 LARAVEL_BLOCKER_USE_ITEMS_SEED_PUBLISHED=true
 
-// NOTE: YOU CAN REMOVE THE KEY CALL IN app.blade.php IF YOU GET A POP UP AND DO NOT WANT TO SETUP A KEY FOR DEV
+# Roles Default Models
+ROLES_DEFAULT_ROLE_MODEL=jeremykenedy\LaravelRoles\Models\Role
+ROLES_DEFAULT_PERMISSION_MODEL=jeremykenedy\LaravelRoles\Models\Permission
+
+# Roles database information
+ROLES_DATABASE_CONNECTION=null
+
+# Roles Misc Settings
+ROLES_DEFAULT_SEPARATOR='.'
+
+# Roles GUI Settings
+ROLES_GUI_ENABLED=true
+ROLES_GUI_AUTH_ENABLED=true
+ROLES_GUI_MIDDLEWARE_ENABLED=true
+ROLES_GUI_MIDDLEWARE='role:admin'
+ROLES_GUI_BLADE_EXTENDED='layouts.app'
+ROLES_GUI_TITLE_EXTENDED='template_title'
+ROLES_GUI_LARAVEL_ROLES_ENABLED=true
+ROLES_GUI_DATATABLES_JS_ENABLED=false
+ROLES_GUI_FLASH_MESSAGES_ENABLED=false
+ROLES_GUI_BLADE_PLACEMENT_CSS=template_linked_css
+ROLES_GUI_BLADE_PLACEMENT_JS=footer_scripts
+
+# NOTE: YOU CAN REMOVE THE KEY CALL IN app.blade.php IF YOU GET A POP UP AND DO NOT WANT TO SETUP A KEY FOR DEV
 # Google Maps API v3 Key - https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key
 GOOGLEMAPS_API_STATUS=true
 GOOGLEMAPS_API_KEY=YOURGOOGLEMAPSkeyHERE
-
-# https://console.developers.google.com/ - NEED OAUTH CREDS
-GOOGLE_ID=YOURGOOGLEPLUSidHERE
-GOOGLE_SECRET=YOURGOOGLEPLUSsecretHERE
-GOOGLE_REDIRECT=http://yourwebsiteURLhere.com/social/handle/google
 
 # https://www.google.com/recaptcha/admin#list
 ENABLE_RECAPTCHA=true
 RE_CAP_SITE=YOURGOOGLECAPTCHAsitekeyHERE
 RE_CAP_SECRET=YOURGOOGLECAPTCHAsecretHERE
 
+# https://console.developers.google.com/ - NEED OAUTH CREDS
+GOOGLE_ID=YOURGOOGLEPLUSidHERE
+GOOGLE_SECRET=YOURGOOGLEPLUSsecretHERE
+GOOGLE_REDIRECT=https://YOURWEBURLHERE.COM/social/handle/google
+
 # https://developers.facebook.com/
 FB_ID=YOURFACEBOOKidHERE
 FB_SECRET=YOURFACEBOOKsecretHERE
-FB_REDIRECT=http://yourwebsiteURLhere.com/social/handle/facebook
+FB_REDIRECT=https://YOURWEBURLHERE.COM/social/handle/facebook
 
 # https://apps.twitter.com/
 TW_ID=YOURTWITTERidHERE
 TW_SECRET=YOURTWITTERkeyHERE
-TW_REDIRECT=http://yourwebsiteURLhere.com/social/handle/twitter
+TW_REDIRECT=https://YOURWEBURLHERE.COM/social/handle/twitter
 
 # https://github.com/settings/applications/new
 GITHUB_ID=YOURIDHERE
 GITHUB_SECRET=YOURSECRETHERE
-GITHUB_URL=https://larablog.io/social/handle/github
+GITHUB_URL=https://YOURWEBURLHERE.COM/social/handle/github
 
 # https://developers.google.com/youtube/v3/getting-started
 YOUTUBE_KEY=YOURKEYHERE
 YOUTUBE_SECRET=YOURSECRETHERE
-YOUTUBE_REDIRECT_URI=https://larablog.io/social/handle/youtube
+YOUTUBE_REDIRECT_URI=https://YOURWEBURLHERE.COM/social/handle/youtube
 
-# http://www.twitch.tv/kraken/oauth2/clients/new
+# https://dev.twitch.tv/docs/authentication/
 TWITCH_KEY=YOURKEYHERE
 TWITCH_SECRET=YOURSECRETHERE
-TWITCH_REDIRECT_URI=http://laravel-authentication.local/social/handle/twitch
+TWITCH_REDIRECT_URI=https://YOURWEBURLHERE.COM/social/handle/twitch
 
 # https://instagram.com/developer/register/
 INSTAGRAM_KEY=YOURKEYHERE
 INSTAGRAM_SECRET=YOURSECRETHERE
-INSTAGRAM_REDIRECT_URI=http://laravel-authentication.local/social/handle/instagram
+INSTAGRAM_REDIRECT_URI=https://YOURWEBURLHERE.COM/social/handle/instagram
 
 # https://basecamp.com/
 # https://github.com/basecamp/basecamp-classic-api
 37SIGNALS_KEY=YOURKEYHERE
 37SIGNALS_SECRET=YOURSECRETHERE
-37SIGNALS_REDIRECT_URI=http://laravel-authentication.local/social/handle/37signals
+37SIGNALS_REDIRECT_URI=https://YOURWEBURLHERE.COM/social/handle/37signals
 
 ```
 
 #### Laravel Developement Packages Used References
-* https://laravel.com/docs/6.x/authentication
-* https://laravel.com/docs/6.x/authorization
-* https://laravel.com/docs/6.x/routing
-* https://laravel.com/docs/6.x/migrations
-* https://laravel.com/docs/6.x/queries
-* https://laravel.com/docs/6.x/views
-* https://laravel.com/docs/6.x/eloquent
-* https://laravel.com/docs/6.x/eloquent-relationships
-* https://laravel.com/docs/6.x/requests
-* https://laravel.com/docs/6.x/errors
+* https://laravel.com/docs/master/authentication
+* https://laravel.com/docs/master/authorization
+* https://laravel.com/docs/master/routing
+* https://laravel.com/docs/master/migrations
+* https://laravel.com/docs/master/queries
+* https://laravel.com/docs/master/views
+* https://laravel.com/docs/master/eloquent
+* https://laravel.com/docs/master/eloquent-relationships
+* https://laravel.com/docs/master/requests
+* https://laravel.com/docs/master/errors
 
 ###### Updates:
-* Update to Laravel 6.0
+* Update to Laravel 7 [See changes in this PR](https://github.com/jeremykenedy/laravel-auth/pull/348/files)
+* Update to Laravel 6
 * Update to Laravel 5.8
 * Added [Laravel Blocker Package](https://github.com/jeremykenedy/laravel-blocker)
 * Added [PHP Info Package](https://github.com/jeremykenedy/laravel-phpinfo)
@@ -575,7 +604,7 @@ INSTAGRAM_REDIRECT_URI=http://laravel-authentication.local/social/handle/instagr
 * Update to Laravel 5.5
 * Added User Delete with Goodbye email
 * Added User Restore Deleted Account from email with secure token
-* Added [Soft Deletes](https://laravel.com/docs/6.x/eloquent#soft-deleting) and Soft Deletes Management panel
+* Added [Soft Deletes](https://laravel.com/docs/master/eloquent#soft-deleting) and Soft Deletes Management panel
 * Added User Account Settings to Profile Edit
 * Added User Change Password to Profile Edit
 * Added User Delete Account to Profile Edit
@@ -583,8 +612,8 @@ INSTAGRAM_REDIRECT_URI=http://laravel-authentication.local/social/handle/instagr
 * Added [hideShowPassword](https://github.com/cloudfour/hideShowPassword)
 * Added Admin Routing Details
 * Admin PHP Information
-* Added Robust [Laravel Logging](https://laravel.com/docs/6.x/errors#logging) with admin UI using MonoLog
-* Added Active Nav states using [Laravel Requests](https://laravel.com/docs/6.x/requests)
+* Added Robust [Laravel Logging](https://laravel.com/docs/master/errors#logging) with admin UI using MonoLog
+* Added Active Nav states using [Laravel Requests](https://laravel.com/docs/master/requests)
 * Added [Laravel Debugger](https://github.com/barryvdh/laravel-debugbar) with Service Provider to manage status in `.env` file.
 * Updated Capture IP not found IP address
 * Added User Avatar Image AJAX Upload with [Dropzone.js](http://www.dropzonejs.com/#configuration)
@@ -668,15 +697,25 @@ INSTAGRAM_REDIRECT_URI=http://laravel-authentication.local/social/handle/instagr
 ### File Tree
 ```
 laravel-auth
-├── .all-contributorsrc
+├── .editorconfig
+├── .env
 ├── .env.example
 ├── .env.travis
 ├── .gitattributes
+├── .github
+│   ├── FUNDING.yml
+│   └── ISSUE_TEMPLATE
+│       ├── bug_report.md
+│       ├── feature_request.md
+│       └── project-questions-and-help.md
 ├── .gitignore
+├── .phpunit.result.cache
+├── .styleci.yml
 ├── .travis.yml
 ├── CODE_OF_CONDUCT.md
 ├── LICENSE
 ├── README.md
+├── _config.yml
 ├── app
 │   ├── Console
 │   │   ├── Commands
@@ -698,6 +737,7 @@ laravel-auth
 │   │   │   ├── ProfilesController.php
 │   │   │   ├── RestoreUserController.php
 │   │   │   ├── SoftDeletesController.php
+│   │   │   ├── TermsController.php
 │   │   │   ├── ThemesManagementController.php
 │   │   │   ├── UserController.php
 │   │   │   ├── UsersManagementController.php
@@ -706,6 +746,7 @@ laravel-auth
 │   │   ├── Middleware
 │   │   │   ├── Authenticate.php
 │   │   │   ├── CheckCurrentUser.php
+│   │   │   ├── CheckForMaintenanceMode.php
 │   │   │   ├── CheckIsUserActivated.php
 │   │   │   ├── EncryptCookies.php
 │   │   │   ├── RedirectIfAuthenticated.php
@@ -762,6 +803,7 @@ laravel-auth
 │   ├── auth.php
 │   ├── broadcasting.php
 │   ├── cache.php
+│   ├── cors.php
 │   ├── database.php
 │   ├── debugbar.php
 │   ├── exceptions.php
@@ -787,13 +829,19 @@ laravel-auth
 │   ├── migrations
 │   │   ├── 2014_10_12_000000_create_users_table.php
 │   │   ├── 2014_10_12_100000_create_password_resets_table.php
+│   │   ├── 2016_01_15_105324_create_roles_table.php
+│   │   ├── 2016_01_15_114412_create_role_user_table.php
+│   │   ├── 2016_01_26_115212_create_permissions_table.php
+│   │   ├── 2016_01_26_115523_create_permission_role_table.php
+│   │   ├── 2016_02_09_132439_create_permission_user_table.php
 │   │   ├── 2017_03_09_082449_create_social_logins_table.php
 │   │   ├── 2017_03_09_082526_create_activations_table.php
 │   │   ├── 2017_03_20_213554_create_themes_table.php
 │   │   ├── 2017_03_21_042918_create_profiles_table.php
 │   │   ├── 2017_12_09_070937_create_two_step_auth_table.php
 │   │   ├── 2019_02_19_032636_create_laravel_blocker_types_table.php
-│   │   └── 2019_02_19_045158_create_laravel_blocker_table.php
+│   │   ├── 2019_02_19_045158_create_laravel_blocker_table.php
+│   │   └── 2019_08_19_000000_create_failed_jobs_table.php
 │   └── seeds
 │       ├── BlockedItemsTableSeeder.php
 │       ├── BlockedTypeTableSeeder.php
@@ -804,6 +852,7 @@ laravel-auth
 │       ├── ThemesTableSeeder.php
 │       └── UsersTableSeeder.php
 ├── license.svg
+├── package-lock.json
 ├── package.json
 ├── phpunit.xml
 ├── public
@@ -831,7 +880,8 @@ laravel-auth
 │   ├── index.php
 │   ├── js
 │   │   ├── app.99230f42ad184f498ce6.js
-│   │   └── app.js
+│   │   ├── app.js
+│   │   └── app.js.LICENSE.txt
 │   ├── mix-manifest.json
 │   ├── robots.txt
 │   └── web.config
@@ -843,28 +893,36 @@ laravel-auth
 │   │   │   └── components
 │   │   │       ├── ExampleComponent.vue
 │   │   │       └── UsersCount.vue
-│   │   └── sass
-│   │       ├── _avatar.scss
-│   │       ├── _badges.scss
-│   │       ├── _bootstrap-social.scss
-│   │       ├── _buttons.scss
-│   │       ├── _forms.scss
-│   │       ├── _helpers.scss
-│   │       ├── _hideShowPassword.scss
-│   │       ├── _lists.scss
-│   │       ├── _logs.scss
-│   │       ├── _margins.scss
-│   │       ├── _mixins.scss
-│   │       ├── _modals.scss
-│   │       ├── _panels.scss
-│   │       ├── _password.scss
-│   │       ├── _socials.scss
-│   │       ├── _typography.scss
-│   │       ├── _user-profile.scss
-│   │       ├── _variables.scss
-│   │       ├── _visibility.scss
-│   │       ├── _wells.scss
-│   │       └── app.scss
+│   │   ├── sass
+│   │   │   ├── _avatar.scss
+│   │   │   ├── _badges.scss
+│   │   │   ├── _bootstrap-social.scss
+│   │   │   ├── _buttons.scss
+│   │   │   ├── _forms.scss
+│   │   │   ├── _helpers.scss
+│   │   │   ├── _hideShowPassword.scss
+│   │   │   ├── _lists.scss
+│   │   │   ├── _logs.scss
+│   │   │   ├── _margins.scss
+│   │   │   ├── _mixins.scss
+│   │   │   ├── _modals.scss
+│   │   │   ├── _panels.scss
+│   │   │   ├── _password.scss
+│   │   │   ├── _socials.scss
+│   │   │   ├── _typography.scss
+│   │   │   ├── _user-profile.scss
+│   │   │   ├── _variables.scss
+│   │   │   ├── _visibility.scss
+│   │   │   ├── _wells.scss
+│   │   │   └── app.scss
+│   │   └── scss
+│   │       └── laravel2step
+│   │           ├── _animations.scss
+│   │           ├── _mixins.scss
+│   │           ├── _modals.scss
+│   │           ├── _variables.scss
+│   │           ├── _verification.scss
+│   │           └── app.scss
 │   ├── lang
 │   │   ├── en
 │   │   │   ├── auth.php
@@ -876,6 +934,7 @@ laravel-auth
 │   │   │   ├── permsandroles.php
 │   │   │   ├── profile.php
 │   │   │   ├── socials.php
+│   │   │   ├── terms.php
 │   │   │   ├── themes.php
 │   │   │   ├── titles.php
 │   │   │   ├── usersmanagement.php
@@ -935,6 +994,8 @@ laravel-auth
 │       │   │   ├── active-users.blade.php
 │       │   │   ├── home.blade.php
 │       │   │   └── route-details.blade.php
+│       │   ├── public
+│       │   │   └── terms.blade.php
 │       │   ├── status.blade.php
 │       │   └── user
 │       │       └── home.blade.php
@@ -991,30 +1052,17 @@ laravel-auth
 
 ### Opening an Issue
 Before opening an issue there are a couple of considerations:
-* A **star** on this project shows support and is way to say thank you to all the contributors. If you open an issue without a star, *your issue may be closed without consideration.* Thank you for understanding and the support. You are all awesome!
-* **Read the instructions** and make sure all steps were *followed correctly*.
-* **Check** that the issue is not *specific to the development environment* setup.
-* **Provide** *duplication steps*.
-* **Attempt to look into the issue**, and if you *have a solution, make a pull request*.
-* **Show that you have made an attempt** to *look into the issue*.
-* **Check** to see if the issue you are *reporting is a duplicate* of a previous reported issue.
-* **Following these instructions show me that you have tried.**
-* If you have a questions send me an email to jeremykenedy@gmail.com
-* Need some help, I can do my best on Slack: https://opensourcehelpgroup.slack.com
-* Please be considerate that this is an open source project that I provide to the community for FREE when opening an issue.
+* A **star** on this project shows support and is way to say thank you to all the contributors. If you open an issue without a star, *your issue may be closed.* Thank you for understanding and the support. You are all awesome!
+* **Please Read the instructions** and make sure all steps were *followed correctly*.
+* **Please Check** that the issue is not *specific to the development environment* setup.
+* **Please Provide** *duplication steps*.
+* **Please Attempt to look into the issue**, and if you *have a solution, make a pull request*.
+* **Please Show that you have made an attempt** to *look into the issue*.
+* **Please Check** to see if the issue you are *reporting is a duplicate* of a previous reported issue.
 
 ### Laravel Auth License
 Laravel-auth is licensed under the [MIT license](https://opensource.org/licenses/MIT). Enjoy!
 
 ### Contributors
-
-Thanks goes to these wonderful people ([emoji key](https://github.com/all-contributors/all-contributors#emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-| [<img src="https://avatars0.githubusercontent.com/u/6244570?v=4" width="110px;" alt="Jeremy Kenedy"/><br /><sub><b>Jeremy Kenedy</b></sub>](http://jeremykenedy.github.io/)<br />[💻](https://github.com/jeremykenedy/laravel-auth/commits?author=jeremykenedy "Code") [🚧](#maintenance-jeremykenedy "Maintenance") [🎨](#design-jeremykenedy "Design") [🌍](#translation-jeremykenedy "Translation") [📦](#platform-jeremykenedy "Packaging/porting to new platform") | [<img src="https://avatars2.githubusercontent.com/u/3525566?v=4" width="110px;" alt="Manuel Montenegro"/><br /><sub><b>Manuel Montenegro</b></sub>](https://derrochando.com)<br />[💻](https://github.com/jeremykenedy/laravel-auth/commits?author=mmonbr "Code") | [<img src="https://avatars1.githubusercontent.com/u/8403417?v=4" width="110px;" alt="VortixDev"/><br /><sub><b>VortixDev</b></sub>](https://github.com/VortixDev)<br />[💻](https://github.com/jeremykenedy/laravel-auth/commits?author=VortixDev "Code") | [<img src="https://avatars3.githubusercontent.com/u/2678909?v=4" width="110px;" alt="terzinnorbert"/><br /><sub><b>terzinnorbert</b></sub>](https://github.com/terzinnorbert)<br />[💻](https://github.com/jeremykenedy/laravel-auth/commits?author=terzinnorbert "Code") | [<img src="https://avatars1.githubusercontent.com/u/1177629?v=4" width="110px;" alt="Miguel Targa"/><br /><sub><b>Miguel Targa</b></sub>](http://targa.me)<br />[💻](https://github.com/jeremykenedy/laravel-auth/commits?author=migueltarga "Code") | [<img src="https://avatars0.githubusercontent.com/u/4694803?v=4" width="110px;" alt="Chris Pappas"/><br /><sub><b>Chris Pappas</b></sub>](https://github.com/chrispappas)<br />[💻](https://github.com/jeremykenedy/laravel-auth/commits?author=chrispappas "Code") | [<img src="https://avatars3.githubusercontent.com/u/18594097?v=4" width="110px;" alt="Hussam"/><br /><sub><b>Hussam</b></sub>](https://www.linkedin.com/in/hussam-el-hwary/)<br />[💻](https://github.com/jeremykenedy/laravel-auth/commits?author=hussamEL-Hwary "Code") |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [<img src="https://avatars2.githubusercontent.com/u/16390911?v=4" width="110px;" alt="Serge Ledig"/><br /><sub><b>Serge Ledig</b></sub>](http://www.cotiga.fr/)<br />[💻](https://github.com/jeremykenedy/laravel-auth/commits?author=cotiga "Code") [🌍](#translation-cotiga "Translation") | [<img src="https://avatars0.githubusercontent.com/u/4799852?v=4" width="110px;" alt="Hennell"/><br /><sub><b>Hennell</b></sub>](https://github.com/hennell-git)<br />[💻](https://github.com/jeremykenedy/laravel-auth/commits?author=hennell-git "Code") | [<img src="https://avatars2.githubusercontent.com/u/13354566?v=4" width="110px;" alt="Sawai Chungsri"/><br /><sub><b>Sawai Chungsri</b></sub>](https://github.com/4UForever)<br />[💻](https://github.com/jeremykenedy/laravel-auth/commits?author=4UForever "Code") | [<img src="https://avatars1.githubusercontent.com/u/2970005?v=4" width="110px;" alt="Kent Dahl"/><br /><sub><b>Kent Dahl</b></sub>](http://kentdahl.no/)<br />[💻](https://github.com/jeremykenedy/laravel-auth/commits?author=kentdahl "Code") | [<img src="https://avatars0.githubusercontent.com/u/25519274?v=4" width="110px;" alt="Lorenzo Sapora"/><br /><sub><b>Lorenzo Sapora</b></sub>](https://sush.us)<br />[💻](https://github.com/jeremykenedy/laravel-auth/commits?author=LorenzoSapora "Code") | [<img src="https://avatars2.githubusercontent.com/u/1516273?v=4" width="110px;" alt="D'Silva"/><br /><sub><b>D'Silva</b></sub>](https://github.com/evnix)<br />[💻](https://github.com/jeremykenedy/laravel-auth/commits?author=evnix "Code") | [<img src="https://avatars3.githubusercontent.com/u/22533877?v=4" width="110px;" alt="Nicolas dos Reis Barbosa de Oliveira"/><br /><sub><b>Nicolas dos Reis Barbosa de Oliveira</b></sub>](http://www.linkedin.com/in/nicolasdosreisOliveira)<br />[🌍](#translation-nibri10 "Translation") |
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+* Thanks goes to these [wonderful people](https://github.com/jeremykenedy/laravel-auth/graphs/contributors):
+* Please feel free to contribute and make pull requests!

@@ -20,15 +20,15 @@ class UsersTableSeeder extends Seeder
         $userRole = Role::whereName('User')->first();
 
         // Seed test admin
-        $seededAdminEmail = 'admin@zeroc0d3lab.local';
+        $seededAdminEmail = 'admin@zeroc0d3lab.dev';
         $user = User::where('email', '=', $seededAdminEmail)->first();
         if ($user === null) {
             $user = User::create([
-                // 'name'                           => $faker->userName,
-                // 'first_name'                     => $faker->firstName,
-                // 'last_name'                      => $faker->lastName,
+                // 'name'                        => $faker->userName,
+                // 'first_name'                  => $faker->firstName,
+                // 'last_name'                   => $faker->lastName,
                 'name'                           => 'admin',
-                'first_name'                     => 'Admin Laravel',
+                'first_name'                     => 'Admin',
                 'last_name'                      => 'Auth',
                 'email'                          => $seededAdminEmail,
                 'password'                       => Hash::make('password'),
@@ -44,16 +44,17 @@ class UsersTableSeeder extends Seeder
         }
 
         // Seed test user
-        $user = User::where('email', '=', 'user@zeroc0d3lab.local')->first();
+        $seededUserEmail = 'user@zeroc0d3lab.dev';
+        $user = User::where('email', '=', $seededUserEmail)->first();
         if ($user === null) {
             $user = User::create([
-                // 'name'                           => $faker->userName,
-                // 'first_name'                     => $faker->firstName,
-                // 'last_name'                      => $faker->lastName,
+                // 'name'                        => $faker->userName,
+                // 'first_name'                  => $faker->firstName,
+                // 'last_name'                   => $faker->lastName,
                 'name'                           => 'user',
-                'first_name'                     => 'User Laravel',
+                'first_name'                     => 'User',
                 'last_name'                      => 'Auth',
-                'email'                          => 'user@zeroc0d3lab.local',
+                'email'                          => $seededUserEmail,
                 'password'                       => Hash::make('password'),
                 'token'                          => str_random(64),
                 'activated'                      => true,

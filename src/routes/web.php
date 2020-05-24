@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +18,7 @@
 // Homepage Route
 Route::group(['middleware' => ['web', 'checkblocked']], function () {
     // Route::get('/', 'WelcomeController@welcome')->name('welcome');
+    Route::get('/terms', 'TermsController@terms')->name('terms');
     Route::get('/', function () {
         return redirect('/login');
     });
@@ -69,7 +72,8 @@ Route::group(['middleware' => ['auth', 'activated', 'currentUser', 'activity', '
     // User Profile and Account Routes
     Route::resource(
         'profile',
-        'ProfilesController', [
+        'ProfilesController',
+        [
             'only' => [
                 'show',
                 'edit',

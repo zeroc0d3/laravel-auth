@@ -3,6 +3,7 @@
         <a class="navbar-brand" href="{{ url('/') }}">
             {!! config('app.name', trans('titles.app')) !!}
         </a>
+        <div class="container collapse navbar-collapse font-weight-bold text-center" style="font-family:'Ubuntu Mono','Ubuntu','Roboto','OpenSans';font-size:10pt" id="ct"></div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             <span class="sr-only">{!! trans('titles.toggleNav') !!}</span>

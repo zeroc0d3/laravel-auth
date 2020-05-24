@@ -10,7 +10,7 @@
 
         <title>@if (trim($__env->yieldContent('template_title')))@yield('template_title') | @endif {{ config('app.name', Lang::get('titles.app')) }}</title>
         <meta name="description" content="">
-        <meta name="author" content="Jeremy Kenedy">
+        <meta name="author" content="ZeroC0D3Lab">
         <link rel="shortcut icon" href="/favicon.ico">
 
         {{-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --}}
@@ -20,6 +20,9 @@
         <![endif]-->
 
         {{-- Fonts --}}
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         @yield('template_linked_fonts')
 
         {{-- Styles --}}
@@ -53,7 +56,7 @@
         @yield('head')
 
     </head>
-    <body>
+    <body onload=display_ct_short();>
         <div id="app">
 
             @include('partials.nav')
@@ -72,6 +75,14 @@
 
             </main>
 
+            <footer class="py-2">
+                <div class="container">
+                    <div class="col-12">
+                        <p class="m-0 text-white">@include('partials.footer')</p>
+                    </div>
+                </div>
+            </footer>
+
         </div>
 
         {{-- Scripts --}}
@@ -87,11 +98,11 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-113876109-2');
         </script>
 
         @yield('footer_scripts')
+        @include('scripts.realclock')
 
     </body>
 </html>
