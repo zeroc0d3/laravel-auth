@@ -86,15 +86,20 @@ class ActivateController extends Controller
         if ($user->activated) {
             Log::info('Activated user attempted to visit '.$currentRoute.'. ', [$user]);
 
+            $message = trans('auth.regThanks');
+            if (config('settings.activation')) {
+                $message = trans('auth.alreadyActivated');
+            }
+
             if ($user->isAdmin()) {
                 return redirect()->route(self::getAdminHomeRoute())
                 ->with('status', 'info')
-                ->with('message', trans('auth.alreadyActivated'));
+                ->with('message', $message);
             }
 
             return redirect()->route(self::getUserHomeRoute())
                 ->with('status', 'info')
-                ->with('message', trans('auth.alreadyActivated'));
+                ->with('message', $message);
         }
 
         return false;
@@ -140,7 +145,7 @@ class ActivateController extends Controller
             return $rCheck;
         }
 
-        if ($user->activated == false) {
+        if ($user->activated === false) {
             $activationsCount = Activation::where('user_id', $user->id)
                 ->where('created_at', '>=', Carbon::now()->subHours(config('settings.timePeriod')))
                 ->count();
@@ -180,7 +185,6 @@ class ActivateController extends Controller
         $currentRoute = Route::currentRouteName();
         $ipAddress = new CaptureIpTrait();
         $role = Role::where('slug', '=', 'user')->first();
-        $profile = new Profile();
 
         $rCheck = $this->activeRedirect($user, $currentRoute);
         if ($rCheck) {
@@ -203,7 +207,6 @@ class ActivateController extends Controller
         $user->detachAllRoles();
         $user->attachRole($role);
         $user->signup_confirmation_ip_address = $ipAddress->getClientIp();
-        $user->profile()->save($profile);
         $user->save();
 
         $allActivations = Activation::where('user_id', $user->id)->get();
@@ -235,7 +238,7 @@ class ActivateController extends Controller
         $lastActivation = Activation::where('user_id', $user->id)->get()->last();
         $currentRoute = Route::currentRouteName();
 
-        if ($user->activated == false) {
+        if ($user->activated === false) {
             $activationsCount = Activation::where('user_id', $user->id)
                 ->where('created_at', '>=', Carbon::now()->subHours(config('settings.timePeriod')))
                 ->count();
@@ -294,8 +297,6 @@ class ActivateController extends Controller
             return view('auth.exceeded')->with($data);
         }
 
-        return $this->activeRedirect($user, $currentRoute)
-            ->with('status', 'info')
-            ->with('message', trans('auth.alreadyActivated'));
+        return redirect()->route(self::getActivationRoute());
     }
 }
