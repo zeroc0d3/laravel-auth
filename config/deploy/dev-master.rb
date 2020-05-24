@@ -3,7 +3,8 @@ ask(:password, nil, echo: false)
 # server '157.230.35.171', user: 'root', roles: %w{app web db}
 
 # Secure Deploy
-server '157.230.35.171', user: 'root', port: 22, password: fetch(:password), roles: %w{app web db}
+# server '157.230.35.171', user: 'root', port: 22, password: fetch(:password), roles: %w{app web db}
+server '157.230.35.171', user: 'root', port: 22, roles: %w{app web db}
 
 # Default branch is :master
 set :branch, "dev-master"

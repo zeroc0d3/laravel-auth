@@ -22,7 +22,7 @@ set :release_storage, "#{fetch(:src_release)}/storage"
 set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "#{fetch(:source)}/.env", "#{fetch(:source)}/composer.json", "#{fetch(:source)}/package.json"
+append :linked_files, "#{fetch(:source)}/.env", "#{fetch(:source)}/composer.json", "#{fetch(:source)}/composer.lock", "#{fetch(:source)}/package.json"
 
 # Default value for :linked_dirs []
 append :linked_dirs, "#{fetch(:source)}/vendor", "#{fetch(:source)}/node_modules", "#{fetch(:source)}/storage"
@@ -234,7 +234,10 @@ end
 after 'deploy:publishing', 'deploy:restart'
 after 'deploy:restart', 'composer:initialize'
 after 'deploy:restart', 'artisan:clear_all'
+
+### NPM ###
 # after 'deploy:restart', 'npm:reinstall'
+### YARN ###
 # after 'deploy:restart', 'yarn:reinstall'
 
 after 'deploy:restart', 'nginx:manual_reload'
