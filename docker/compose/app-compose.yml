@@ -4,12 +4,12 @@ version: '3.5'
 # NETWORK SETUP
 #================================================================================================
 networks:
-  mynet-zeroc0d3:
+  zeroc0d3-net:
     name: ${NETWORKS_NAME}
     driver: ${NETWORKS_DRIVER}
     ipam:
       config:
-        - subnet: 172.111.112.0/16
+        - subnet: 172.119.119.0/16
 
 #================================================================================================
 # VOLUME SETUP
@@ -39,7 +39,7 @@ services:
       - INSTALL_MSSQL=${INSTALL_MSSQL}
     privileged: true
     networks:
-      mynet-zeroc0d3:
+      zeroc0d3-net:
         ipv4_address: ${CONTAINER_IP_ADMINER}
 
 #================================================================================================
@@ -55,16 +55,16 @@ services:
       - ${DATA_MARIADB}:/var/lib/mysql
     environment:
       - ENV=local
-      - MYSQL_PROFILE=my-small
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_ROOT_HOST=localhost
-      - MYSQL_HOST=localhost
-      - MYSQL_DATABASE=dbname
-      - MYSQL_USERNAME=root
-      - MYSQL_PASSWORD=password
+      - MYSQL_PROFILE=my-small                         # default configuration profile to use (my-small, my-medium ...)
+      - MYSQL_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}   # root password (optional)
+      - MYSQL_ROOT_HOST=${MARIADB_ROOT_HOST}           # root user hostmask (optional)
+      - MYSQL_HOST=${MARIADB_HOST}                     # user hostmask
+      - MYSQL_DATABASE=${MARIADB_DATABASE}             # create user database (optional)
+      - MYSQL_USERNAME=${MARIADB_USERNAME}             # user name
+      - MYSQL_PASSWORD=${MARIADB_PASSWORD}             # user password
     privileged: true
     networks:
-      mynet-zeroc0d3:
+      zeroc0d3-net:
         ipv4_address: ${CONTAINER_IP_MARIADB}
 
 #================================================================================================
@@ -83,5 +83,5 @@ services:
       - PORTAINER_VERSION=${PORTAINER_VERSION}
     privileged: true
     networks:
-      mynet-zeroc0d3:
+      zeroc0d3-net:
         ipv4_address: ${CONTAINER_IP_PORTAINER}
