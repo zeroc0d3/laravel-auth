@@ -117,6 +117,22 @@ clear-config:
 	@cd ${PATH_WORKSPACE} && php artisan config:clear
 	@echo '- DONE -'
 
+clear-debug:
+	@echo "============================================"
+	@echo " Task      : Clear Debugbar Cache View "
+	@echo " Date/Time : `date`"
+	@echo "============================================"
+	@cd ${PATH_WORKSPACE} && php artisan debugbar:clear
+	@echo '- DONE -'
+
+clear-event:
+	@echo "============================================"
+	@echo " Task      : Clear Event Cache View "
+	@echo " Date/Time : `date`"
+	@echo "============================================"
+	@cd ${PATH_WORKSPACE} && php artisan event:clear
+	@echo '- DONE -'
+
 clear-all:
 	@echo "============================================"
 	@echo " Task      : Clear Config Cache View "
@@ -125,6 +141,8 @@ clear-all:
 	@cd ${PATH_WORKSPACE} && php artisan view:clear
 	@cd ${PATH_WORKSPACE} && php artisan cache:clear
 	@cd ${PATH_WORKSPACE} && php artisan config:clear
+	@cd ${PATH_WORKSPACE} && php artisan debugbar:clear
+	@cd ${PATH_WORKSPACE} && php artisan event:clear
 	@echo '- DONE -'
 
 fixing-cache:

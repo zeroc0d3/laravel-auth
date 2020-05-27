@@ -2,15 +2,15 @@ server {
     listen 80;
 
     # Log files for Debugging
-    access_log /data/www/laravel-auth/preprod/shared/log/access.log;
-    error_log /data/www/laravel-auth/preprod/shared/log/error.log;
+    access_log /var/www/preprod/shared/log/access.log;
+    error_log /var/www/preprod/shared/log/error.log;
 
     # Webroot Directory for Laravel project
-    root /data/www/laravel-auth/preprod/current/src/public;
+    root /var/www/preprod/current/src/public;
     index index.php index.html index.htm;
 
     # Your Domain Name
-    server_name preprod-auth.zeroc0d3lab.local;
+    server_name preprod.laravel-auth.local;
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;

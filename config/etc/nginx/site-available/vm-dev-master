@@ -2,15 +2,15 @@ server {
     listen 80;
 
     # Log files for Debugging
-    access_log /data/www/laravel-auth/dev-master/shared/log/access.log;
-    error_log /data/www/laravel-auth/dev-master/shared/log/error.log;
+    access_log /var/www/dev-master/shared/log/access.log;
+    error_log /var/www/dev-master/shared/log/error.log;
 
     # Webroot Directory for Laravel project
-    root /data/www/laravel-auth/dev-master/current/src/public;
+    root /var/www/dev-master/current/src/public;
     index index.php index.html index.htm;
 
     # Your Domain Name
-    server_name auth.zeroc0d3lab.local;
+    server_name dev-master.laravel-auth.local;
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;

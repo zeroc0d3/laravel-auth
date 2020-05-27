@@ -2,10 +2,10 @@
 lock "~> 3.11.2"
 
 set :application, "laravel-auth"
-set :repo_url, "git@gitlab.com:zeroc0d3lab-laravel/laravel-auth.git"
+set :repo_url, "git@github.com:zeroc0d3/laravel-auth.git"
 
 # Default branch is :master
-set :branch, "dev-master"
+set :branch, "master"
 set :source, "src"
 
 # Default deploy_to directory is /var/www/my_app_name
@@ -70,6 +70,66 @@ namespace :chown do
   end
 end
 
+namespace :artisan do
+  desc 'Artisan Key Generate'
+  task :key_generate do
+    on roles(:all) do
+      execute "cd #{fetch(:src_current)}; php artisan key:generate"
+    end
+  end
+
+  desc 'Storage Link'
+  task :storage_link do
+    on roles(:all) do
+      execute "cd #{fetch(:src_current)}; php artisan storage:link"
+    end
+  end
+
+  desc 'Schedule Run'
+  task :storage_link do
+    on roles(:all) do
+      execute "cd #{fetch(:src_current)}; php artisan schedule:run"
+    end
+  end
+
+  desc 'Create Cached Event'
+  task :cache_event do
+    on roles(:all) do
+      execute "cd #{fetch(:src_current)}; php artisan event:cache"
+    end
+  end
+
+  desc 'Rebuild Cached Package'
+  task :cache_package do
+    on roles(:all) do
+      execute "cd #{fetch(:src_current)}; php artisan package:discover"
+    end
+  end
+
+  desc 'Create Cached Route'
+  task :cache_route do
+    on roles(:all) do
+      execute "cd #{fetch(:src_current)}; php artisan route:cache"
+    end
+  end
+
+  desc 'Create Cached View'
+  task :cache_view do
+    on roles(:all) do
+      execute "cd #{fetch(:src_current)}; php artisan view:cache"
+    end
+  end
+
+  task :build_cache do
+    on roles(:all) do
+      invoke 'artisan:cache_event'
+      invoke 'artisan:cache_package'
+      invoke 'artisan:cache_route'
+      invoke 'artisan:cache_view'
+    end
+  end
+end
+
 namespace :nginx do
   desc 'Reload NGINX'
   task :manual_reload do
@@ -124,10 +184,17 @@ namespace :composer do
     end
   end
 
+  desc 'Self Update Composer'
+  task :self_update do
+    on roles(:all) do
+      execute "cd #{fetch(:src_current)}; composer self-update"
+    end
+  end
+
   desc 'Update Composer'
   task :update do
     on roles(:all) do
-      execute "cd #{fetch(:src_current)}; composer self-update"
+      execute "cd #{fetch(:src_current)}; composer update"
     end
   end
 
@@ -161,6 +228,13 @@ namespace :artisan do
     end
   end
 
+  desc 'Clear Config'
+  task :clear_config do
+    on roles(:all) do
+      execute "cd #{fetch(:src_current)}; php artisan config:clear"
+    end
+  end
+
   desc 'Clear Debugbar'
   task :clear_debug do
     on roles(:all) do
@@ -179,6 +253,7 @@ namespace :artisan do
     on roles(:all) do
       invoke 'artisan:clear_view'
       invoke 'artisan:clear_cache'
+      invoke 'artisan:clear_config'
       invoke 'artisan:clear_debug'
       invoke 'artisan:clear_event'
     end
