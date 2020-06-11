@@ -1,17 +1,103 @@
-## Capistrano-Laravel
+## Laravel-Auth (with Capistrano Deployment)
 
-Zero downtime deployment Laravel with Capistrano
+Zero downtime deployment Laravel Auth with Capistrano Deployment
 
-### Requirements
-* Ruby Environment (RBENV) or Ruby Version Manager (RVM)
-
+### How to use docker container
 * Clone this repo
   ```
-  git clone git@github.com:zeroc0d3/capistrano-laravel.git
+  git clone git@github.com:zeroc0d3/laravel-auth.git
   ```
+* Change environment docker
+  ```
+  cd laravel-auth
+  cp docker/.env.example docker/.env
+  ```
+* Running docker-container
+  ```
+  make run-docker
+  ```
+
+### How to use laravel-auth
+* Clone this repo
+  ```
+  git clone git@github.com:zeroc0d3/laravel-auth.git
+  ```
+* Change environment laravel
+  ```
+  cd laravel-auth
+  cp src/.env.example src/.env
+  ```
+* Define database connection (`src/.env`)
+  ```
+  ### MySQL ###
+  DB_CONNECTION=mysql
+  DB_HOST=172.119.119.4
+  DB_PORT=3306
+  DB_DATABASE=zeroc0d3lab_auth
+  DB_USERNAME=admin
+  DB_PASSWORD=password
+
+  ### PostgreSQL ###
+  DB_CONNECTION=mysql
+  DB_HOST=172.119.119.6
+  DB_PORT=3306
+  DB_DATABASE=zeroc0d3lab_auth
+  DB_USERNAME=admin
+  DB_PASSWORD=password
+  ```
+* Running composer
+  ```
+  make composer-install
+  --- or ---
+  cd src
+  composer install
+  ```
+* Running key generate
+  ```
+  make key-generate
+  --- or ---
+  cd src
+  php artisan key:generate
+  ```
+* Running npm
+  ```
+  make npm-install
+  make run-mix-dev
+  --- or ---
+  cd src
+  npm install
+  npm run dev
+  ```
+* Running migration database
+  ```
+  make run-migrate-all
+  --- or ---
+  cd src
+  php artisan migrate:install
+  php artisan migrate --seed
+  ```
+* Running laravel-auth project
+  ```
+  make run-project
+  --- or ---
+  cd src
+  php artisan serve --port=8080
+  ```
+* Open Browser (chrome / firefox)
+  ```
+  http://localhost:8080
+  ```
+* Default Access
+  ```
+  username: admin@zeroc0d3lab.dev / user@zeroc0d3lab.dev
+  password: password
+  ```
+
+### Capistrano Requirements
+* Ruby Environment (RBENV) or Ruby Version Manager (RVM)
+
 * Running bundle
   ```
-  cd capistrano-laravel
   bundle install
   ```
 * Edit Laravel source target in `config/deploy.rb`
