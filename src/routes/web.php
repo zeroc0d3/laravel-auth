@@ -17,11 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 // Homepage Route
 Route::group(['middleware' => ['web', 'checkblocked']], function () {
-    // Route::get('/', 'WelcomeController@welcome')->name('welcome');
+    Route::get('/', 'WelcomeController@welcome')->name('welcome');
     Route::get('/terms', 'TermsController@terms')->name('terms');
-    Route::get('/', function () {
-        return redirect('/login');
-    });
 });
 
 // Authentication Routes
