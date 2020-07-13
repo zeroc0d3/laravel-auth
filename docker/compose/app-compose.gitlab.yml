@@ -25,7 +25,7 @@ volumes:
     driver: ${VOLUMES_DRIVER:-local}
   postgresql:
     driver: ${VOLUMES_DRIVER:-local}
-  deployment:
+  gitlab-runner:
     driver: ${VOLUMES_DRIVER:-local}
 
 services:
@@ -148,25 +148,18 @@ services:
         ipv4_address: ${CONTAINER_IP_PGADMIN:-172.125.125.7}
 
 #================================================================================================
-# CAPISTRANO-RVM DEPLOYMENT
+# GITLAB-RUNNER
 #================================================================================================
-  deployment:
-    image: dockerframework/capistrano-rvm:18.04-${RUBY_VERSION:-2.7.1}
-    # build:
-    #   context: .
-    container_name: ${CONTAINER_DEPLOYMENT:-zeroc0d3lab_deployment}
+  gitlab-runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: ${CONTAINER_GITLAB_RUNNER:-zeroc0d3lab_gitlab_runner}
     ports:
-      - "${PORT_DEPLOYMENT}:22"
+      - "${PORT_GITLAB_RUNNER:-5213}:22"
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${DATA_DEPLOYMENT:-/data/deployment}:/root/deploy
-      - ${PATH_SSH:-~/.ssh}:/root/.ssh
-    environment:
-      - TZ="Asia/Jakarta"
-      - UBUNTU_VERSION=${UBUNTU_VERSION:-18.04}
-      - RUBY_VERSION=${RUBY_VERSION:-2.7.1}
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${GITLAB_RUNNER_CONFIG:-/data/docker/gitlab-runner/config}:/etc/gitlab-runner
     privileged: true
     tty: true
     networks:
       zeroc0d3lab_net:
-        ipv4_address: ${CONTAINER_IP_DEPLOYMENT:-172.125.125.8}
+        ipv4_address: ${CONTAINER_IP_GITLAB_RUNER:-172.125.125.99}
